@@ -1,6 +1,9 @@
 #pragma once;
+#include <iostream>
 
 typedef int TElem;
+
+typedef std::pair<TElem, int> TComparabil;
 
 typedef bool(*Relatie)(TElem, TElem);
 
@@ -10,12 +13,49 @@ bool rel(TElem, TElem);
 
 class IteratorColectie;
 
+class Nod;
+
+typedef Nod* PNod;
+
+class Nod{
+private:
+    TComparabil ec;
+
+    PNod st, dr;
+
+public:
+    friend class Colectie;
+
+    Nod(TElem e, PNod st, PNod dr);
+
+    TElem element();
+
+    int frecventa();
+
+    PNod stanga();
+
+    PNod dreapta();
+};
+
 class Colectie {
 
 	friend class IteratorColectie;
 
 private:
-	/* aici e reprezentarea */
+	PNod rad;
+
+    PNod adauga_rec(PNod p, TElem e);
+
+    void distrug_rec(PNod);
+
+    TComparabil find_rec(PNod p, TElem e) const;
+
+    int dim_rec(PNod p) const;
+
+    PNod sterge_rec(PNod p, TElem e);
+
+    PNod minim(PNod p);
+
 public:
 		//constructorul implicit
 		Colectie();

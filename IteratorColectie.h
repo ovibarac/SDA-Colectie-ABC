@@ -1,5 +1,6 @@
 #pragma once
 #include "Colectie.h"
+#include <stack>
 
 class Colectie;
 typedef int TElem;
@@ -17,6 +18,10 @@ private:
 	const Colectie& col;
 	/* aici e reprezentarea  spcifica a iteratorului*/
 
+    PNod curent;
+
+    std::stack<PNod> s;
+
 public:
 
 		//reseteaza pozitia iteratorului la inceputul containerului
@@ -31,6 +36,6 @@ public:
 
 		//returneaza valoarea elementului din container referit de iterator
 		//arunca exceptie daca iteratorul nu e valid
-		TElem element() const;
+		TElem element();
 };
 
