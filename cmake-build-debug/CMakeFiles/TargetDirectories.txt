@@ -1,0 +1,3 @@
+/home/ovi/work/sda/SDA-Colectie-ABC/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ovi/work/sda/SDA-Colectie-ABC/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ovi/work/sda/SDA-Colectie-ABC/cmake-build-debug/CMakeFiles/SDA_Colectie_ABC.dir
